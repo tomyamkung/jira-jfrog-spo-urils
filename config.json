@@ -1,0 +1,13 @@
+{
+  "countryPaths": {
+    "日本": "type1",
+    "Japan": "type1",
+    "北米": "type2",
+    "US": "type2"
+  },
+  "baseUrls": {
+    "type1": "https://type1/${ticketID}",
+    "type2": "https://type2/${ticketID}"
+  },
+  "default": "条件にあてはまりません"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "jira-jfrog-spo-utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron\\electron.exe ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "http-proxy-agent": "^7.0.2",
+    "https-proxy-agent": "^7.0.5",
+    "isomorphic-fetch": "^3.0.0",
+    "keytar": "^7.9.0",
+    "node-windows": "^1.0.0-beta.8"
+  }
+}

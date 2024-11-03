@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JIRA Ticket Viwer</title>
+</head>
+<body>
+  <h1>JIRA Ticket Viewer</h1>
+  <input type="text" id="ticketNumberInput" placeholder="Enter JIRA Ticket Number">
+  <button id="fetchButton">Fetch Ticket</button>
+  <div id="ticketDetails">
+    <p><strong>Detailed Document Location:</strong> <span id="detailedDocumentLocation"></span></p>
+    <p><strong>Found in Region:</strong> <span id="foundInRegion"></span></p>
+  </div>
+  <pre id="ticketData"></pre>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
