@@ -3,6 +3,7 @@ const path = require('path');
 const fetch = require('isomorphic-fetch');
 const { HttpsProxyAgent } = require('https-proxy-agent');
 const { exec } = require('child_process');
+const config = require('./config.json');
 
 function createWindow () {
   const mainWindow = new BrowserWindow({
@@ -55,9 +56,14 @@ ipcMain.handle('fetch-jira-ticket', async (event, ticketNumber) => {
     const detailedDocumentLocation = data.fields.customfield_10048.content[0].content[0].text;
     const foundInRegion = data.fields.customfield_10049[0];
 
+    // countryPathsからtypeを取得し、baseUrlsを使ってパスを作成
+    const pathType = config.countryPaths[foundInRegion];
+    const ticketPath = pathType ? config.baseUrls[pathType].replace('${ticketID}', ticketNumber) : config.default;
+
     return {
       detailedDocumentLocation,
       foundInRegion,
+      ticketPath,
       raw: data
     };
   } catch (error) {
